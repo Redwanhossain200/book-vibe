@@ -25,7 +25,7 @@ const BookDetails = () => {
     yearOfPublishing
   } = expectedBook;
 
-  const { handleMarkAsRead, storedBooks } = useContext(BookContext)
+  const { handleMarkAsRead, handleWishList } = useContext(BookContext)
 
 
 
@@ -104,10 +104,10 @@ const BookDetails = () => {
           </div>
 
           <div className="flex items-center gap-4 pt-4">
-            <button className="btn btn-outline border-gray-300 px-8 hover:bg-gray-800 hover:text-white transition-colors" onClick={() => handleMarkAsRead(expectedBook)}>
+            <button className="btn btn-outline border-gray-300 px-8 hover:bg-gray-800 rounded-2xl hover:text-white transition-colors" onClick={() => handleMarkAsRead(expectedBook)}>
               Mark as Read
             </button>
-            <button className="btn bg-[#50B1C9] hover:bg-[#3e8ea2] border-none hover:text-black text-white px-8">
+            <button className="btn bg-[#50B1C9] hover:bg-[#3e8ea2] border-none rounded-2xl hover:text-black text-white px-8" onClick={() => handleWishList(expectedBook)}>
               Add to Wishlist
             </button>
           </div>
