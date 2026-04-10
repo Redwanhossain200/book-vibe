@@ -1,9 +1,10 @@
 import React from 'react'
 import { CiStar } from 'react-icons/ci';
+import { Link } from 'react-router';
 
 const BookCard = ({ book }) => {
   return (
-    <div className="card bg-base-100 shadow-sm border border-gray-200 w-full hover:shadow-md transition-shadow p-6 rounded-2xl">
+    <Link to={`/bookDetails/${book.bookId}`} className="card bg-base-100 shadow-sm border border-gray-200 w-full hover:shadow-md transition-shadow p-6 rounded-2xl">
       <figure className='bg-[#F3F3F3] rounded-2xl py-8 flex justify-center items-center h-57.5'>
         <img
           src={book.image}
@@ -12,8 +13,8 @@ const BookCard = ({ book }) => {
         />
       </figure>
 
-      <div className="mt-6">
-        <div className='flex flex-wrap items-center gap-3 mb-4'>
+      <div className="card-body mt-6">
+        <div className='flex flex-wrap items-center gap-2 mb-4'>
           {book.tags.map((tag, index) => (
             <span key={index} className="px-4 py-1 text-green-500 bg-green-50 rounded-full font-medium text-sm">
               {tag}
@@ -31,7 +32,7 @@ const BookCard = ({ book }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 

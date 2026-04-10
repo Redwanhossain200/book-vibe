@@ -48,7 +48,7 @@ const Navbar = () => {
 
         <div className="navbar-end gap-2 md:gap-4">
           <button className="btn bg-[#23BE0A] hover:bg-[#1fa308] text-white border-none min-h-0 h-10 md:h-12 px-4 md:px-7 text-sm md:text-lg rounded-lg">Sign In</button>
-          <button className="btn bg-[#59C6D2] hover:bg-[#4ab5c1] text-white border-none min-h-0 h-10 md:h-12 px-4 md:px-7 text-sm md:text-lg rounded-lg">Sign Up</button>
+          <button className="btn bg-[#59C6D2] hover:bg-[#4ab5c1] text-white hover:text-black border-none min-h-0 h-10 md:h-12 px-4 md:px-7 text-sm md:text-lg rounded-lg">Sign Up</button>
         </div>
       </nav>
     </div>
