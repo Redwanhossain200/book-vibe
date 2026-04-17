@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
 import { BookContext } from '../../context/BookContext';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
@@ -6,16 +6,13 @@ import ListedReadList from '../../components/listedBooks/listedReadList';
 import ListedWishList from '../../components/listedBooks/listedWishList';
 
 const Books = () => {
-
-  const { readList, WishList } = useContext(BookContext)
-  console.log(readList, WishList, "bookContext");
-
+  const { readList, WishList } = useContext(BookContext);
+  console.log(readList, WishList, 'bookContext');
 
   return (
-    <div className='container mx-auto my-3'>
+    <div className="container mx-auto my-3">
       Read list: {readList.length}
       Wish list: {WishList.length}
-
       <Tabs>
         <TabList>
           <Tab>Read List</Tab>
@@ -30,7 +27,7 @@ const Books = () => {
         </TabPanel>
       </Tabs>
     </div>
-  )
-}
+  );
+};
 
-export default Books
+export default Books;
