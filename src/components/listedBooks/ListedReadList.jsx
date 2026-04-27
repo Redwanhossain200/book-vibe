@@ -31,12 +31,10 @@ const ListedReadList = ({ sortingType }) => {
   }
 
   return (
-    <div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {filteredReadList.map((book) => (
-          <BookCard key={book.bookId} book={book} />
-        ))}
-      </div>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {filteredReadList.map((book) => (
+        <BookCard key={book.bookId} book={book} />
+      ))}
     </div>
   );
 };

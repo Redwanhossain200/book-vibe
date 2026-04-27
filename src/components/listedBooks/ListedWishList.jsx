@@ -31,12 +31,10 @@ const ListedWishList = ({ sortingType }) => {
   }
 
   return (
-    <div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {filteredWishList.map((book) => (
-          <BookCard key={book.bookId} book={book} />
-        ))}
-      </div>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {filteredWishList.map((book) => (
+        <BookCard key={book.bookId} book={book} />
+      ))}
     </div>
   );
 };
