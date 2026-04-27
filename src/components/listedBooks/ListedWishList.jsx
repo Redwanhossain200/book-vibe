@@ -1,22 +1,26 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { BookContext } from '../../context/BookContext';
+import React, { useEffect, useState } from 'react';
+import { getAllWishListFromLocalDB } from '../../utils/localStorage';
 import BookCard from '../ui/BookCard';
 
 const ListedWishList = ({ sortingType }) => {
-  const { WishList } = useContext(BookContext);
-  console.log(WishList, 'bookContext');
-
-  const [filteredWishList, setFilteredWishList] = useState(WishList);
+  const [wishList, setWishList] = useState([]);
+  const [filteredWishList, setFilteredWishList] = useState([]);
 
   useEffect(() => {
-    let updatedList = [...WishList];
+    const storedWishList = getAllWishListFromLocalDB();
+    setWishList(storedWishList);
+    setFilteredWishList(storedWishList);
+  }, []);
+
+  useEffect(() => {
+    let updatedList = [...wishList];
     if (sortingType === 'pages') {
-      updatedList.sort((a, b) => a.totalPages - b.totalPages);
+      updatedList.sort((a, b) => b.totalPages - a.totalPages);
     } else if (sortingType === 'rating') {
-      updatedList.sort((a, b) => a.rating - b.rating);
+      updatedList.sort((a, b) => b.rating - a.rating);
     }
     setFilteredWishList(updatedList);
-  }, [sortingType, WishList]);
+  }, [sortingType, wishList]);
 
   if (filteredWishList.length === 0) {
     return (
@@ -29,8 +33,8 @@ const ListedWishList = ({ sortingType }) => {
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {filteredWishList.map((book, ind) => (
-          <BookCard key={ind} book={book} />
+        {filteredWishList.map((book) => (
+          <BookCard key={book.bookId} book={book} />
         ))}
       </div>
     </div>

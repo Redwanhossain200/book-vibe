@@ -1,19 +1,23 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { getAllReadListFromLocalDB } from '../../utils/localStorage';
 import BookCard from '../ui/BookCard';
-import { BookContext } from '../../context/BookContext';
 
 const ListedReadList = ({ sortingType }) => {
-  const { readList } = useContext(BookContext);
-  console.log(readList, 'bookContext');
+  const [readList, setReadList] = useState([]);
+  const [filteredReadList, setFilteredReadList] = useState([]);
 
-  const [filteredReadList, setFilteredReadList] = useState(readList);
+  useEffect(() => {
+    const storedReadList = getAllReadListFromLocalDB();
+    setReadList(storedReadList);
+    setFilteredReadList(storedReadList);
+  }, []);
 
   useEffect(() => {
     let updatedList = [...readList];
     if (sortingType === 'pages') {
-      updatedList.sort((a, b) => a.totalPages - b.totalPages);
+      updatedList.sort((a, b) => b.totalPages - a.totalPages);
     } else if (sortingType === 'rating') {
-      updatedList.sort((a, b) => a.rating - b.rating);
+      updatedList.sort((a, b) => b.rating - a.rating);
     }
     setFilteredReadList(updatedList);
   }, [sortingType, readList]);
@@ -29,8 +33,8 @@ const ListedReadList = ({ sortingType }) => {
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {filteredReadList.map((book, ind) => (
-          <BookCard key={ind} book={book} />
+        {filteredReadList.map((book) => (
+          <BookCard key={book.bookId} book={book} />
         ))}
       </div>
     </div>
