@@ -24,7 +24,7 @@ const Banner = () => {
             <img
               src={heroImg}
               alt="Featured Book"
-              className="w-72 md:w-md object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
+              className="w-72 md:w-[28rem] object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
             />
             <div className="absolute -inset-4 bg-[#23BE0A]/5 rounded-full blur-3xl -z-10 group-hover:bg-[#23BE0A]/10 transition-colors" />
           </div>

@@ -1,22 +1,23 @@
 import React from 'react';
-import Navbar from '../components/shared/navbar/Navbar';
 import { Outlet, Link } from 'react-router';
-import { FaFacebook, FaTwitter, FaInstagram, FaGithub } from 'react-icons/fa';
+import Navbar from '../components/shared/navbar/Navbar';
+import { FaFacebook, FaInstagram, FaGithub } from 'react-icons/fa';
 
 const MainLayout = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="min-h-screen flex flex-col font-poppins selection:bg-[#23BE0A]/20 selection:text-[#23BE0A]">
       <Navbar />
-      <main className="grow">
+      
+      <main className="flex-grow animate-fade-in">
         <Outlet />
       </main>
-      
+
       <footer className="bg-gray-900 text-white pt-20 pb-10 mt-20">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div className="col-span-1 md:col-span-2 space-y-6 animate-fade-in">
               <Link to="/" className="flex items-center gap-2 group w-fit">
-                <div className="w-10 h-10 bg-[#23BE0A] rounded-xl flex items-center justify-center text-white font-bold text-2xl transition-transform duration-500 group-hover:rotate-360">
+                <div className="w-10 h-10 bg-[#23BE0A] rounded-xl flex items-center justify-center text-white font-bold text-2xl transition-transform duration-500 group-hover:rotate-[360deg]">
                   B
                 </div>
                 <span className="text-3xl font-bold tracking-tight">BookVibe</span>
@@ -43,25 +44,19 @@ const MainLayout = () => {
             </div>
 
             <div className="animate-fade-in" style={{ animationDelay: '100ms' }}>
-              <h4 className="text-xl font-bold mb-6 text-white">Explore</h4>
-              <ul className="space-y-4">
-                {['Home', 'Listed Books', 'Pages to Read'].map((item, i) => (
-                  <li key={i}>
-                    <Link 
-                      to={item === 'Home' ? '/' : item === 'Listed Books' ? '/books' : '/page-to-read'}
-                      className="text-gray-400 hover:text-[#23BE0A] hover:pl-2 transition-all duration-300 font-medium"
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
+              <h4 className="text-xl font-bold mb-6 text-white">Quick Links</h4>
+              <ul className="space-y-4 text-gray-400 font-medium">
+                <li className="hover:text-[#23BE0A] transition-colors cursor-pointer">About Us</li>
+                <li className="hover:text-[#23BE0A] transition-colors cursor-pointer">All Books</li>
+                <li className="hover:text-[#23BE0A] transition-colors cursor-pointer">Support</li>
+                <li className="hover:text-[#23BE0A] transition-colors cursor-pointer">Terms</li>
               </ul>
             </div>
 
             <div className="animate-fade-in" style={{ animationDelay: '200ms' }}>
               <h4 className="text-xl font-bold mb-6 text-white">Contact</h4>
               <ul className="space-y-4 text-gray-400 font-medium">
-                <li className="hover:text-[#23BE0A] transition-colors cursor-pointer">[EMAIL_ADDRESS]</li>
+                <li className="hover:text-[#23BE0A] transition-colors cursor-pointer">support@bookvibe.com</li>
                 <li className="hover:text-[#23BE0A] transition-colors cursor-pointer">+8801700000000</li>
                 <li className="hover:text-[#23BE0A] transition-colors cursor-pointer">Dhaka, Bangladesh</li>
               </ul>

@@ -27,11 +27,11 @@ const Books = () => {
         <h1 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight">Your Bookshelf</h1>
       </div>
 
-      <div className="flex justify-center mb-16 relative z-100">
+      <div className="flex justify-center mb-16 relative z-[100]">
         <div className="relative">
           <button
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="px-8 py-4 bg-[#23BE0A] hover:bg-[#1fa008] text-white font-bold rounded-2xl flex items-center gap-3 transition-all duration-300 shadow-xl shadow-[#23BE0A]/20 hover:scale-105 active:scale-95 min-w-[240px] justify-between relative z-101"
+            className="px-8 py-4 bg-[#23BE0A] hover:bg-[#1fa008] text-white font-bold rounded-2xl flex items-center gap-3 transition-all duration-300 shadow-xl shadow-[#23BE0A]/20 hover:scale-105 active:scale-95 min-w-[240px] justify-between relative z-[101]"
           >
             {getCurrentSortLabel()} <BsArrowDown className={`transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} />
           </button>
@@ -39,10 +39,10 @@ const Books = () => {
           {isDropdownOpen && (
             <>
               <div 
-                className="fixed inset-0 z-100" 
+                className="fixed inset-0 z-[100]" 
                 onClick={() => setIsDropdownOpen(false)}
               />
-              <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-100 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.25)] z-102 overflow-hidden animate-slide-up p-2">
+              <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-100 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] z-[102] overflow-hidden animate-slide-up p-2">
                 {sortOptions.map((option) => (
                   <button
                     key={option.value}
