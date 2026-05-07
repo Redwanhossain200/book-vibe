@@ -4,7 +4,7 @@ BookVibe is a modern, premium web application designed for book enthusiasts to d
 
 ## 🚀 Live Demo
 
-[Visit Project](https://book-vibe.vercel.app/)
+[Visit Project](https://book-vibe-sable.vercel.app/)
 
 > If the live URL is not active yet, replace this link with the deployed application URL after deployment.
 
@@ -71,6 +71,11 @@ BookVibe is a modern, premium web application designed for book enthusiasts to d
 ## 🎨 Design Philosophy
 
 BookVibe follows a **"Clean, Simple, and Beginner-Friendly"** design philosophy. The interface uses a light, airy color palette with vibrant accents of emerald green (`#23BE0A`). The codebase is intentionally kept clean and free of unnecessary comments for a professional look.
+
+
+### 📸 Project Preview
+
+<img width="100%" alt="Book Vibe Preview" src="./src/assets/Home.png" />
 
 ---
 
