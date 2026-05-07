@@ -1,4 +1,4 @@
-# BookVibe - Premium Book Management Platform
+# 📚 BookVibe - Premium Book Management Platform
 
 BookVibe is a modern, premium web application designed for book enthusiasts to discover, track, and manage their reading journey. Built with a focus on clean aesthetics and smooth user experience, it allows users to maintain a personal bookshelf with "Read" and "Wishlist" categories.
 
@@ -79,4 +79,4 @@ BookVibe follows a **"Clean, Simple, and Beginner-Friendly"** design philosophy.
 
 ---
 
-Built with ❤️ by Redwan Hossain
+<p align="center">Built with ❤️ by Redwan Hossain</p>
