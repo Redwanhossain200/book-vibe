@@ -4,37 +4,38 @@ import { Link } from 'react-router';
 
 const BookCard = ({ book }) => {
   return (
-    <Link
-      to={`/bookDetails/${book.bookId}`}
-      className="card bg-base-100 shadow-sm border border-gray-200 w-full hover:shadow-md transition-shadow p-6 rounded-2xl">
-      <figure className="bg-[#F3F3F3] rounded-2xl py-8 flex justify-center items-center h-57.5">
-        <img
-          src={book.image}
-          alt={book.bookName}
-          className="h-full object-contain shadow-sm rounded-md"
-        />
-      </figure>
+    <Link to={`/bookDetails/${book.bookId}`} className="block h-full group">
+      <div className="bg-white rounded-2xl p-6 border border-gray-100 hover:border-[#23BE0A]/30 hover:shadow-2xl hover:shadow-[#23BE0A]/5 transition-all duration-500 h-full flex flex-col hover:-translate-y-2">
+        <div className="bg-gray-50 rounded-xl p-8 mb-6 flex justify-center items-center h-64 overflow-hidden">
+          <img
+            src={book.image}
+            alt={book.bookName}
+            className="h-full object-contain transition-transform duration-700 group-hover:scale-110 group-hover:rotate-2"
+          />
+        </div>
 
-      <div className="card-body mt-6">
-        <div className="flex flex-wrap items-center gap-2 mb-4">
-          {book.tags.map((tag, index) => (
-            <span
-              key={index}
-              className="px-4 py-1 text-green-500 bg-green-50 rounded-full font-medium text-sm">
+        <div className="flex flex-wrap gap-2 mb-4">
+          {book.tags.slice(0, 2).map((tag, index) => (
+            <span key={index} className="px-4 py-1.5 bg-[#23BE0A]/5 text-[#23BE0A] rounded-full text-sm font-medium transition-colors group-hover:bg-[#23BE0A]/10">
               {tag}
             </span>
           ))}
         </div>
 
-        <h2 className="text-2xl font-bold text-[#131313] mb-2">
-          {book.bookName}
-        </h2>
-        <p className="font-medium text-gray-600 mb-5">By : {book.author}</p>
+        <div className="flex-1">
+          <h2 className="text-2xl font-bold text-gray-900 mb-2 transition-colors group-hover:text-[#23BE0A]">
+            {book.bookName}
+          </h2>
+          <p className="text-gray-600 font-medium mb-4">
+            By: {book.author}
+          </p>
+        </div>
 
-        <div className="flex justify-between items-center border-t border-dashed pt-5 border-gray-300">
-          <div className="font-medium text-gray-600">{book.category}</div>
-          <div className="font-medium flex items-center gap-2">
-            {book.rating} <CiStar className="text-2xl" />
+        <div className="pt-4 border-t border-dashed border-gray-200 flex justify-between items-center text-gray-600 font-medium mt-auto">
+          <span className="transition-colors group-hover:text-gray-900">{book.category}</span>
+          <div className="flex items-center gap-1 bg-gray-50 px-3 py-1 rounded-lg transition-colors group-hover:bg-[#23BE0A]/5 group-hover:text-[#23BE0A]">
+            <span>{book.rating}</span>
+            <CiStar className="text-xl" />
           </div>
         </div>
       </div>

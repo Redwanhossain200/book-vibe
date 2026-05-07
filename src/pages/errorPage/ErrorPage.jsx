@@ -1,26 +1,35 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
+
 const ErrorPage = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-gray-900 to-gray-800 text-white px-4">
+    <div className="min-h-screen flex items-center justify-center bg-white px-4">
       <div className="text-center max-w-lg">
-        <h1 className="text-8xl font-extrabold text-red-500 drop-shadow-lg">
-          404
-        </h1>
+        <h1 className="text-9xl font-bold text-gray-200">404</h1>
+        
+        <div className="space-y-4 mb-10">
+          <h2 className="text-4xl font-bold text-gray-900">Page Not Found</h2>
+          <p className="text-gray-500 text-lg">
+            The page you are looking for does not exist.
+          </p>
+        </div>
 
-        <h2 className="text-2xl md:text-3xl font-semibold mt-4">
-          Oops! Page not found
-        </h2>
-
-        <p className="text-gray-400 mt-3">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-
-        <Link
-          to="/"
-          className="inline-block mt-6 px-6 py-3 bg-red-400 hover:bg-red-500 rounded-full text-white font-medium transition duration-300 shadow-lg">
-          Go Home
-        </Link>
+        <div className="flex gap-4 justify-center">
+          <button 
+            onClick={() => navigate(-1)}
+            className="btn-outline px-8"
+          >
+            Go Back
+          </button>
+          <Link
+            to="/"
+            className="btn-primary px-8"
+          >
+            Home
+          </Link>
+        </div>
       </div>
     </div>
   );

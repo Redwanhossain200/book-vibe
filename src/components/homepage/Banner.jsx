@@ -1,29 +1,39 @@
 import React from 'react';
-import bookImg from '../../assets/pngwing 1.png';
+import { Link } from 'react-router';
+import heroImg from '../../assets/hero_img.jpg';
 
 const Banner = () => {
   return (
-    <div className="hero bg-base-200 min-h-125 lg:min-h-[70vh] rounded-3xl my-8 container mx-auto px-4 lg:px-20">
-      <div className="hero-content flex-col lg:flex-row-reverse w-full justify-between gap-12 py-12 lg:py-0">
-        <div className="flex justify-center lg:justify-end w-full lg:w-1/2">
-          <img
-            src={bookImg}
-            className="w-full max-w-75 md:max-w-100 drop-shadow-2xl"
-            alt="Banner Book"
-          />
+    <section className="pt-32 pb-16 px-4 md:px-6">
+      <div className="container mx-auto bg-gray-50 rounded-[2.5rem] p-10 md:p-20 flex flex-col md:flex-row items-center justify-between gap-16 relative overflow-hidden group">
+        <div className="flex-1 space-y-10 text-center md:text-left relative z-10 animate-slide-up">
+          <h1 className="text-4xl md:text-7xl font-bold text-gray-900 leading-[1.1] tracking-tight">
+            Books to freshen up <br className="hidden md:block" />
+            your bookshelf
+          </h1>
+          
+          <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-4">
+            <Link to="/books" className="px-10 py-4 bg-[#23BE0A] hover:bg-[#1fa008] text-white font-bold rounded-2xl transition-all duration-300 hover:scale-105 active:scale-95 shadow-xl shadow-[#23BE0A]/20">
+              View The List
+            </Link>
+          </div>
         </div>
 
-        <div className="space-y-8 text-center lg:text-left lg:w-1/2">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-[#131313]">
-            Books to freshen up <br className="hidden md:block" /> your
-            bookshelf
-          </h1>
-          <button className="btn bg-[#23BE0A] hover:bg-[#1fa308] border-none text-white px-7 py-4 h-auto text-xl font-bold rounded-lg">
-            View The List
-          </button>
+        <div className="flex-1 flex justify-center relative animate-fade-in">
+          <div className="relative group transition-transform duration-700 hover:scale-110 hover:-rotate-3">
+            <img
+              src={heroImg}
+              alt="Featured Book"
+              className="w-72 md:w-md object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
+            />
+            <div className="absolute -inset-4 bg-[#23BE0A]/5 rounded-full blur-3xl -z-10 group-hover:bg-[#23BE0A]/10 transition-colors" />
+          </div>
         </div>
+
+        <div className="absolute top-[-10%] right-[-5%] w-96 h-96 bg-[#23BE0A]/5 rounded-full blur-[100px] animate-pulse" />
+        <div className="absolute bottom-[-10%] left-[-5%] w-96 h-96 bg-[#59C6D2]/5 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '2s' }} />
       </div>
-    </div>
+    </section>
   );
 };
 
